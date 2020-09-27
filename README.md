@@ -1,1 +1,1 @@
-# Hash-generatoriaus
+# Hash generatorius
