@@ -8,10 +8,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <string.h>
-#include <math.h>
 #include <vector>
 
 using namespace std;
+
+#include "Hash.h"
+#include "ReadWrite.h"
 
 #endif //HASH_GENERATORIUS_HEADER_H

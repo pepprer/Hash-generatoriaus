@@ -11,12 +11,10 @@ class ReadWrite {
 private:
     string input;
     string output;
+    void readFile();
+    void readCommandLine();
 public:
     ReadWrite();
-
-    void readFile();
-
-    void readCommandLine();
 
     void write();
 
@@ -24,7 +22,7 @@ public:
 
     string getInput();
 
-    string getOutput();
+    void setOutput(string str);
 };
 
 

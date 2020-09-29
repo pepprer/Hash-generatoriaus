@@ -41,11 +41,7 @@ void ReadWrite::readFile() {
 }
 
 void ReadWrite::write() {
-    cout << this->output << endl;
-}
-
-string ReadWrite::getOutput() {
-    return this->output;
+    cout << "Sekmingai uzsifruotas: " << this->output << endl;
 }
 
 ReadWrite::ReadWrite() {
@@ -101,6 +97,10 @@ void ReadWrite::readCommandLine() {
     cin >> helper;
     getline(cin, this->input);
     this->input = helper + this->input;
+}
+
+void ReadWrite::setOutput(string str) {
+    this->output = str;
 }
 
 
