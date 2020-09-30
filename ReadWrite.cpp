@@ -52,6 +52,7 @@ ReadWrite::ReadWrite() {
     } else {
         this->readCommandLine();
     }
+    cout << endl;
 }
 
 string ReadWrite::checkInput(const string& value1, const string& value2) {

@@ -3,4 +3,4 @@ project(hash_generatorius)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(hash_generatorius main.cpp header.h ReadWrite.cpp ReadWrite.h Hash.cpp Hash.h)
+add_executable(hash_generatorius main.cpp header.h ReadWrite.cpp ReadWrite.h Hash.cpp Hash.h Test.cpp Test.h)

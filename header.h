@@ -9,10 +9,14 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <fstream>
+#include <random>
+#include <algorithm>
 
 using namespace std;
 
 #include "Hash.h"
 #include "ReadWrite.h"
+#include "Test.h"
 
 #endif //HASH_GENERATORIUS_HEADER_H
