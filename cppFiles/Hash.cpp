@@ -119,3 +119,10 @@ void Hash::hashNew(string str) {
     this->convertTo32();
     this->cryptString();
 }
+
+string myHash(const string str)
+{
+    Hash hash = Hash(str);
+
+    return hash.getHashValue();
+}

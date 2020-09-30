@@ -42,5 +42,7 @@ public:
     void checkKonstitucija();
 };
 
+void test();
+
 
 #endif //HASH_GENERATORIUS_TEST_H

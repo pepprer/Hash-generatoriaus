@@ -4,7 +4,7 @@ int main() {
     cout << "Norite paleisti testus ? (iveskite: 'taip' arba 'ne' be kabuciu)" << endl;
 
     if (ReadWrite::checkInput("taip", "ne") == "taip") {
-        Test test(true);
+        test();
     } else {
         ReadWrite readWrite;
         Hash hashing(readWrite.getInput());

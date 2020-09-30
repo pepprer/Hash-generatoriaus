@@ -93,7 +93,26 @@ void Test::check25k1000Symbols() {
 }
 
 void Test::checkKonstitucija() {
-    this->runProcess("konstitucija.txt", "Sutapimu konstitucijoje: ");
+    vector<string> text;
+    for (const string &line: this->readFileToVector("konstitucija.txt")) {
+        text.push_back(line);
+    }
+
+    auto start = chrono::high_resolution_clock::now();
+    for(int i = 0; i < text.size(); i++) {
+        sha256(text.at(1));
+    }
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> d = end-start;
+    cout<< "SHA256 sifravo faila konstitucija.txt: "<< d.count() << endl;
+
+    start = chrono::high_resolution_clock::now();
+    for(int i = 0; i < text.size(); i++) {
+        myHash(text.at(1));
+    }
+    end = chrono::high_resolution_clock::now();
+     d = end-start;
+    cout<< "Mano sifravimo algoritmas sifravo faila konstitucija.txt: "<< d.count() << endl;
 }
 
 void Test::runProcess(const string &fileName, const string &message) {
@@ -125,4 +144,9 @@ int Test::checkCoincidences(vector<string> text, int length) {
         }
     }
     return sutapimai;
+}
+
+void test()
+{
+    Test test = Test(true);
 }

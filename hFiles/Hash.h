@@ -28,5 +28,6 @@ public:
     void hashNew(string str);
 };
 
+string myHash(const string str);
 
 #endif //HASH_GENERATORIUS_HASH_H
