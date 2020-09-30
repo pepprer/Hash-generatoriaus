@@ -5,7 +5,7 @@
 #ifndef HASH_GENERATORIUS_HASH_H
 #define HASH_GENERATORIUS_HASH_H
 
-#include "header.h"
+#include "../header.h"
 
 class Hash {
 private:
@@ -13,12 +13,18 @@ private:
     string string32;
     string hashValue;
     unsigned long long int size = 0;
+
     void convertTo32();
+
     void countSize();
+
     void cryptString();
+
 public:
     Hash(string str = "");
+
     string getHashValue();
+
     void hashNew(string str);
 };
 

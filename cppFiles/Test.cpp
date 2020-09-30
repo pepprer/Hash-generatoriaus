@@ -2,20 +2,20 @@
 // Created by Patryk on 2020-09-29.
 //
 
-#include "Test.h"
+#include "../hFiles/Test.h"
 
 Test::Test(bool start) {
     cout << "Testas:" << endl;
     cout << endl;
     if (start) {
-//        this->filesWithOneSymbol();
-//        this->filesWithMoreThan1000Symbols();
-//        this->filesWithMoreThan1000SymbolsOneWithOneDif();
-//        this->emptyFile();
-//        this->check25k10Symbols();
-//        this->check25k100Symbols();
-//        this->check25k500Symbols();
-//        this->check25k1000Symbols();
+        this->filesWithOneSymbol();
+        this->filesWithMoreThan1000Symbols();
+        this->filesWithMoreThan1000SymbolsOneWithOneDif();
+        this->emptyFile();
+        this->check25k10Symbols();
+        this->check25k100Symbols();
+        this->check25k500Symbols();
+        this->check25k1000Symbols();
         this->checkKonstitucija();
     }
 }

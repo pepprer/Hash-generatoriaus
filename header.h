@@ -15,8 +15,8 @@
 
 using namespace std;
 
-#include "Hash.h"
-#include "ReadWrite.h"
-#include "Test.h"
+#include "hFiles/Hash.h"
+#include "hFiles/ReadWrite.h"
+#include "hFiles/Test.h"
 
 #endif //HASH_GENERATORIUS_HEADER_H

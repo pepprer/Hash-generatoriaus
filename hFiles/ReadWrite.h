@@ -5,7 +5,7 @@
 #ifndef HASH_GENERATORIUS_READWRITE_H
 #define HASH_GENERATORIUS_READWRITE_H
 
-#include "header.h"
+#include "../header.h"
 
 class ReadWrite {
 private:

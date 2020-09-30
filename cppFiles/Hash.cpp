@@ -2,7 +2,7 @@
 // Created by Patryk on 2020-09-29.
 //
 
-#include "Hash.h"
+#include "../hFiles/Hash.h"
 
 void Hash::convertTo32() {
     int textLength = this->text.length();
@@ -44,7 +44,7 @@ void Hash::convertTo32() {
 
 
     if (length != 1) {
-        int acv = firstLength % length;
+        int acv = this->size % length;
 
         string string32Return;
 
@@ -64,8 +64,8 @@ Hash::Hash(string str) {
 }
 
 void Hash::countSize() {
-    for(char s: this->text) {
-        this->size = size += (int)s;
+    for (char s: this->text) {
+        this->size = size += (int) s;
     }
     this->size += this->text.size();
 }
@@ -73,17 +73,16 @@ void Hash::countSize() {
 void Hash::cryptString() {
     static const char alphabet[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     unsigned long long int crypt = 43;
-    if(this->size == 0) this->size = 1;
-    for(char c : string32)
-    {
-        crypt += (int)c * this->size * (int)c;
-        if(crypt % 124 > 62) {
+    if (this->size == 0) this->size = 1;
+    for (char c : string32) {
+        crypt += (int) c * this->size * (int) c;
+        if (crypt % 124 > 62) {
             this->hashValue += alphabet[crypt % 124 - 62];
         } else if (crypt % 92 > 32) {
             this->hashValue += alphabet[crypt % 92 - 32];
-        } else if(crypt % 88 > 12) {
+        } else if (crypt % 88 > 12) {
             this->hashValue += alphabet[crypt % 92 + 17];
-        } else if(crypt % 62 > 32) {
+        } else if (crypt % 62 > 32) {
             this->hashValue += alphabet[crypt % 62 - 20];
         } else {
             this->hashValue += alphabet[crypt % 62];
@@ -91,16 +90,15 @@ void Hash::cryptString() {
     }
 
     crypt = 777;
-    for(char c : string32)
-    {
-        crypt += (int)c * this->size * (int)c;
-        if(crypt % 186 > 124) {
+    for (char c : string32) {
+        crypt += (int) c * this->size * (int) c;
+        if (crypt % 186 > 124) {
             this->hashValue += alphabet[crypt % 186 - 124];
         } else if (crypt % 77 > 32) {
             this->hashValue += alphabet[crypt % 77 - 32];
-        } else if(crypt % 66 > 32) {
+        } else if (crypt % 66 > 32) {
             this->hashValue += alphabet[crypt % 66 - 32];
-        } else if(crypt % 34 > 12) {
+        } else if (crypt % 34 > 12) {
             this->hashValue += alphabet[crypt % 34 - 12];
         } else {
             this->hashValue += alphabet[crypt % 62];
