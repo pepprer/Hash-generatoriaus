@@ -1,8 +1,8 @@
 #include "header.h"
 
 int main() {
-    string text;
-    string text2;
+    string text, text2;
+
     cout << "Norite paleisti testus ? (iveskite: 'taip' arba 'ne' be kabuciu)" << endl;
     if (ReadWrite::checkInput("taip", "ne") == "taip") {
         test();

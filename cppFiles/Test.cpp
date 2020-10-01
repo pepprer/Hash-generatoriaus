@@ -5,19 +5,17 @@
 #include "../hFiles/Test.h"
 
 Test::Test(bool start) {
-    cout << "Testas:" << endl;
-    cout << endl;
     if (start) {
-        this->filesWithOneSymbol();
-        this->filesWithMoreThan1000Symbols();
-        this->filesWithMoreThan1000SymbolsOneWithOneDif();
-        this->emptyFile();
-        this->check25k10Symbols();
-        this->check25k100Symbols();
-        this->check25k500Symbols();
-        this->check25k1000Symbols();
-        this->checkKonstitucija();
-        this->checkInBits();
+        filesWithOneSymbol();
+        filesWithMoreThan1000Symbols();
+        filesWithMoreThan1000SymbolsOneWithOneDif();
+        emptyFile();
+        check25k10Symbols();
+        check25k100Symbols();
+        check25k500Symbols();
+        check25k1000Symbols();
+        checkKonstitucija();
+        checkInBits();
     }
 }
 
@@ -35,21 +33,21 @@ void Test::filesWithOneSymbol() {
     cout << "TESTAS: failai su vienu simboliu:" << endl;
     cout << "------------------------------------------------------------------------------" << endl;
     Hash hashing;
-    this->runProcessWith2Files("oneSymbol1.txt", "oneSymbol2.txt");
+    runProcessWith2Files("oneSymbol1.txt", "oneSymbol2.txt");
 }
 
 void Test::filesWithMoreThan1000Symbols() {
     cout << "------------------------------------------------------------------------------" << endl;
     cout << "TESTAS: failai su daugiau nei 1000 simboliu:" << endl;
     cout << "------------------------------------------------------------------------------" << endl;
-    this->runProcessWith2Files("1001Symbols1.txt", "1001Symbols2.txt");
+    runProcessWith2Files("1001Symbols1.txt", "1001Symbols2.txt");
 }
 
 void Test::filesWithMoreThan1000SymbolsOneWithOneDif() {
     cout << "------------------------------------------------------------------------------" << endl;
     cout << "TESTAS: failai su daugiau nei 1000 simboliu kur keiciasi tik vienas simbolis viduryje:" << endl;
     cout << "------------------------------------------------------------------------------" << endl;
-    this->runProcessWith2Files("1001Symbols3.txt", "1001Symbols4.txt");
+    runProcessWith2Files("1001Symbols3.txt", "1001Symbols4.txt");
 }
 
 void Test::emptyFile() {
@@ -58,7 +56,7 @@ void Test::emptyFile() {
     cout << "------------------------------------------------------------------------------" << endl;
     Hash hashing;
     string text;
-    text = this->readFile("emptyFile.txt");
+    text = readFile("emptyFile.txt");
     hashing.hashNew(text);
     cout << "Sifras: " << hashing.getHashValue() << endl;
     cout << endl;
@@ -70,11 +68,11 @@ void Test::runProcessWith2Files(const string &fileName1, const string &fileName2
     Hash hashing;
     string text;
 
-    text = this->readFile(fileName1);
+    text = readFile(fileName1);
     hashing.hashNew(text);
     cout << "Sifras: " << hashing.getHashValue() << endl;
 
-    text = this->readFile(fileName2);
+    text = readFile(fileName2);
     hashing.hashNew(text);
     cout << "Sifras: " << hashing.getHashValue() << endl;
 
@@ -82,19 +80,19 @@ void Test::runProcessWith2Files(const string &fileName1, const string &fileName2
 }
 
 void Test::check25k10Symbols() {
-    this->runProcess("check25k10Symbols.txt",  10);
+    runProcess("check25k10Symbols.txt",  10);
 }
 
 void Test::check25k100Symbols() {
-    this->runProcess("check25k100Symbols.txt", 100);
+    runProcess("check25k100Symbols.txt", 100);
 }
 
 void Test::check25k500Symbols() {
-    this->runProcess("check25k500Symbols.txt", 500);
+    runProcess("check25k500Symbols.txt", 500);
 }
 
 void Test::check25k1000Symbols() {
-    this->runProcess("check25k1000Symbols.txt", 1000);
+    runProcess("check25k1000Symbols.txt", 1000);
 }
 
 void Test::checkKonstitucija() {
@@ -102,7 +100,7 @@ void Test::checkKonstitucija() {
     cout << "TESTAS: konstitucijos isfravimas lygiomis aplinkybemis:" << endl;
     cout << "------------------------------------------------------------------------------" << endl;
     vector<string> text;
-    for (const string &line: this->readFileToVector("konstitucija.txt")) {
+    for (const string &line: readFileToVector("konstitucija.txt")) {
         text.push_back(line);
     }
 
@@ -128,14 +126,33 @@ void Test::runProcess(const string &fileName, int s) {
     cout << "------------------------------------------------------------------------------" << endl;
     cout << "TESTAS: failas su 25000 reiksmemis po " + to_string(s) + " simboliu:" << endl;
     cout << "------------------------------------------------------------------------------" << endl;
-    Hash hashing;
-    vector<string> text;
-    for (const string &line: this->readFileToVector(fileName)) {
-        hashing.hashNew(line);
-        text.push_back(hashing.getHashValue());
+
+    vector<string> text1, text2;
+
+    readAndHashToVectors(fileName, text1, text2, s);
+
+    int sutapimas = 0;
+
+    for(int i = 0; i < text1.size(); i++) {
+        if(text1.at(i) == text2.at(i)) sutapimas++;
     }
-    cout << "Sutapimu: " << this->checkCoincidences(text, text.size()) << endl;
+
+    cout << "Sutapimu: " << sutapimas << endl;
     cout << endl;
+}
+
+void Test::readAndHashToVectors(const string &fileName, vector<string> &text1, vector<string> &text2, int s) {
+    Hash hashing;
+    string str;
+    ifstream fd(fileName);
+
+    while (getline(fd, str)) {
+        hashing.hashNew(str.substr(0, s));
+        text1.push_back(hashing.getHashValue());
+
+        hashing.hashNew(str.substr(s+1, s));
+        text2.push_back(hashing.getHashValue());
+    }
 }
 
 vector<string> Test::readFileToVector(const string &fileName) {
@@ -163,19 +180,12 @@ void Test::checkInBits() {
     cout << "------------------------------------------------------------------------------" << endl;
     cout << "TESTAS: Procentinis skirtingumas:" << endl;
     cout << "------------------------------------------------------------------------------" << endl;
-    Hash hashing;
-    string str;
+
     vector<string> text1, text2;
+
+    readAndHashToVectors("porosStringu.txt", text1, text2, 32);
+
     vector<double> skirtumai;
-    ifstream fd("porosStringu.txt");
-
-    while (getline(fd, str)) {
-        hashing.hashNew(str.substr(0, 32));
-        text1.push_back(hashing.getHashValue());
-
-        hashing.hashNew(str.substr(33, 32));
-        text2.push_back(hashing.getHashValue());
-    }
 
     for(int s = 0; s < 100000; s++) {
         bitset<512> b1;

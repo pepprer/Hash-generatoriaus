@@ -29,18 +29,18 @@ void ReadWrite::readFile() {
         }
     } while (fd.fail());
 
-    this->input.assign((istreambuf_iterator<char>(fd)),
+    input.assign((istreambuf_iterator<char>(fd)),
                        (istreambuf_iterator<char>()));
 
     fd.close();
 }
 
 void ReadWrite::write() {
-    cout << "Sekmingai uzsifruotas: " << this->output << endl;
+    cout << "Sekmingai uzsifruotas: " << output << endl;
 }
 
 ReadWrite::ReadWrite() {
-    this->readFile();
+    readFile();
 }
 
 string ReadWrite::checkInput(const string &value1, const string &value2) {
@@ -72,11 +72,11 @@ string ReadWrite::checkInput(const string &value1, const string &value2) {
 }
 
 string ReadWrite::getInput() {
-    return this->input;
+    return input;
 }
 
 void ReadWrite::setOutput(string str) {
-    this->output = str;
+    output = str;
 }
 
 

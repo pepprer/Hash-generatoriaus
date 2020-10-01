@@ -15,6 +15,8 @@ private:
 
     vector<string> readFileToVector(const string &fileName);
 
+    void readAndHashToVectors(const string &fileName, vector<string> &text1, vector<string> &text2, int s);
+
     void runProcessWith2Files(const string &fileName1, const string &fileName2);
 
     void runProcess(const string &fileName, int s);
