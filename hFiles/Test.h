@@ -40,6 +40,8 @@ public:
     void check25k1000Symbols();
 
     void checkKonstitucija();
+
+    void checkInBits();
 };
 
 void test();
