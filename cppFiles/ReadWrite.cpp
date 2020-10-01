@@ -40,14 +40,7 @@ void ReadWrite::write() {
 }
 
 ReadWrite::ReadWrite() {
-    cout << "Norite nuskaityti faila ? (iveskite: 'taip' arba 'ne' be kabuciu)" << endl;
-
-    if (ReadWrite::checkInput("taip", "ne") == "taip") {
-        this->readFile();
-    } else {
-        this->readCommandLine();
-    }
-    cout << endl;
+    this->readFile();
 }
 
 string ReadWrite::checkInput(const string &value1, const string &value2) {
@@ -80,14 +73,6 @@ string ReadWrite::checkInput(const string &value1, const string &value2) {
 
 string ReadWrite::getInput() {
     return this->input;
-}
-
-void ReadWrite::readCommandLine() {
-    string helper;
-    cout << "Iveskite teksta kuri norite su konvertuoti: " << endl;
-    cin >> helper;
-    getline(cin, this->input);
-    this->input = helper + this->input;
 }
 
 void ReadWrite::setOutput(string str) {
