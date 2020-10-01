@@ -15,10 +15,9 @@ private:
 
     vector<string> readFileToVector(const string &fileName);
 
-    void runProcessWith2Files(const string &fileName1, const string &message1, const string &fileName2,
-                              const string &message2);
+    void runProcessWith2Files(const string &fileName1, const string &fileName2);
 
-    void runProcess(const string &fileName, const string &message);
+    void runProcess(const string &fileName, int s);
 
 public:
     Test(bool start = false);
