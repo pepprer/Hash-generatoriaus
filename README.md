@@ -65,21 +65,17 @@ END FUNCTION
 1. Du failai sudaryti tik iš vieno, tačiau skirtingo, simbolio:
     * [oneSymbol1.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/oneSymbol1.txt) **Hash'as:** QHZrPen1JbtKTi3Ldv9OX5NfxlDS7PhzFB7hAHOVc3j7JT3AHlVL1vDVn3NHOVcp
     * [oneSymbol2.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/oneSymbol2.txt) **Hash'as:** eKvfP9tZFirbL5VxdJnXH1BeKzjTDtZFXLlVFzjT258BEvfP9TWZcfiP5pZJ39B5
-* :heavy_check_mark: Norint paleisti testą atidarykite failą **main.cpp** ir į funkciją **main** parašykite **Test().filesWithOneSymbol();**
     
 2. Du failai sudaryti iš daugiau nei 1000 atsitiktinai sugeneruotų simbolių:
     * [1001Symbols1.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols1.txt) **Hash'as:** JhpWP7JmVh1aNRzPRrNHK7Nt1PHmTNPbHUfPJjfJJtUHDUJJbhJJDtU1r87X88JL
     * [1001Symbols2.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols2.txt) **Hash'as:** QKYclkV1CQ2IBjz7NDXW3yIkhxWGEWy784v8b4W52GU8fZp2HeD1Ho8SZH8AR5o1
-* :heavy_check_mark: Norint paleisti testą atidarykite failą **main.cpp** ir į funkciją **main** parašykite **Test().filesWithMoreThan1000Symbols();**
     
 3. Du failai sudaryti iš daugiau nei 1000 simbolių, bet skiriasi vienu nuo kito tik vienu simboliu:
     * [1001Symbols3.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols3.txt) **Hash'as:** mTBTVHfnR7FLhBbXvJFfdZJhFPNJIT5d5lT7acDBHxNBXG7NlJ5AT5Y75UI9ZLDL
     * [1001Symbols4.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols4.txt) **Hash'as:** nTiPHTj1Pa8zE6cOkQZ1PRWjP8VALHmbyuI4GJrVTQyX4NNQIEcrFn3TQuKK2ab1
-* :heavy_check_mark: Norint paleisti testą atidarykite failą **main.cpp** ir į funkciją **main** parašykite **Test().filesWithMoreThan1000SymbolsOneWithOneDif();**
 
 4. Tuščias failas:
     * [emptyFile.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/emptyFile.txt) **Hash'as:** rOeM9mUbRuncOyKnYuDpNVHjYSRZCodiDQkhBQcRdQipYoPdCCN3e0WZOcHCZOWK
-* :heavy_check_mark: Norint paleisti testą atidarykite failą **main.cpp** ir į funkciją **main** parašykite **Test().emptyFile();**
     
 5. Efektyvumas:
     * Hash'uojama kiekviena eilutė iš [konstitucija.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/konstitucija.txt) šią funkciją ir SHA-256
@@ -87,31 +83,35 @@ END FUNCTION
     * Matuojamas laikas:
         * SHA-256 - **0.0009968s**
         * Šitą funkciją - **0.0019949s**
-*  :heavy_check_mark: Norint paleisti testą atidarykite failą **main.cpp** ir į funkciją **main** parašykite **Test().checkKonstitucija();**
         
 6. 100 000 atsitiktinių simbolių eilučių porų: 
     * 25 000 porų, kurių ilgis - **10 simbolių:**
         * [check25k10Symbols.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/check25k10Symbols.txt) - **Kolizijų skaičius: 0**
-* :heavy_check_mark: Norint paleisti testą atidarykite failą **main.cpp** ir į funkciją **main** parašykite **Test().check25k10Symbols();**
-
     * 25 000 porų, kurių ilgis - **100 simbolių:**
         * [check25k100Symbols.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/check25k100Symbols.txt) - **kolizijų skaičius: 0**
-* :heavy_check_mark: Norint paleisti testą atidarykite failą **main.cpp** ir į funkciją **main** parašykite **Test().check25k100Symbols();**
-
     * 25 000 porų, kurių ilgis - **500 simbolių:**
         * [check25k500Symbols.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/check25k500Symbols.txt) - **Kolizijų skaičius: 0**
-* :heavy_check_mark: Norint paleisti testą atidarykite failą **main.cpp** ir į funkciją **main** parašykite **Test().check25k500Symbols();**
-
     * 25 000 porų, kurių ilgis - **1000 simbolių:**
         * [check25k1000Symbols.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/check25k1000Symbols.txt) - **Kolizijų skaičius: 0**
-* :heavy_check_mark: Norint paleisti testą atidarykite failą **main.cpp** ir į funkciją **main** parašykite **Test().check25k1000Symbols();**
         
 7. 100 000 atsitiktinių simbolių eilučių porų, 32 simbolių eilučių ilgiu, juos skiria tik vienas simbolis. Įvertinamas gautų hash'ų procentinis "skirtingumas" bitų
    lygmenyje:
     * Minimali skirtingumo reikšmė: **50.3906%**
     * Maksimali skirtingumo reikšmė: **76.3672%**
     * Vidurinė skirtingumo reikšmė: **59.9649%**
-* :heavy_check_mark: Norint paleisti testą atidarykite failą **main.cpp** ir į funkciją **main** parašykite **Test().checkInBits();**
+
+### Norint paleisti kažkokį testą iš pateiktų aukščiau atidarykite failą **main.cpp** ir į funkciją **main** parašykite:
+1. :heavy_check_mark: **Test().filesWithOneSymbol();**
+2. :heavy_check_mark: **Test().filesWithMoreThan1000Symbols();**
+3. :heavy_check_mark: **Test().filesWithMoreThan1000SymbolsOneWithOneDif();**
+4. :heavy_check_mark: **Test().emptyFile();**
+5. :heavy_check_mark: **Test().checkKonstitucija();**
+6. 
+   * :heavy_check_mark: **Test().check25k10Symbols();**
+   * :heavy_check_mark: **Test().check25k100Symbols();**
+   * :heavy_check_mark: **Test().check25k500Symbols();**
+   * :heavy_check_mark: **Test().check25k1000Symbols();**
+7. :heavy_check_mark: **Test().checkInBits();**
 
 ### Išvados:
    * Stiprybės:
