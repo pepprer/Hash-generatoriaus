@@ -12,7 +12,7 @@ yra paverčiamas unikaliu fiksuoto dydžio pseudo-atsitiktiniu skaičiumi, vadin
 
 ### Programos publikacijos:
 
-[v0.1]() versija:
+[v0.1](https://github.com/pepprer/Hash-generatorius/releases/tag/v0.1) versija:
 1. Nuskaito failo pavadinima arba teksta is komandinės eilutės
 2. Išveda į komandinę eilutę suhashota reikšmė
 3. Leidžia paleisti testus
@@ -63,22 +63,22 @@ END FUNCTION
 ### Eksperimentinė analizė:
 
 1. Du failai sudaryti tik iš vieno, tačiau skirtingo, simbolio:
-    * [oneSymbol1.txt]() **Šifras:** QHZrPen1JbtKTi3Ldv9OX5NfxlDS7PhzFB7hAHOVc3j7JT3AHlVL1vDVn3NHOVcp
-    * [oneSymbol2.txt]() **Šifras:** eKvfP9tZFirbL5VxdJnXH1BeKzjTDtZFXLlVFzjT258BEvfP9TWZcfiP5pZJ39B5
+    * [oneSymbol1.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/oneSymbol1.txt) **Šifras:** QHZrPen1JbtKTi3Ldv9OX5NfxlDS7PhzFB7hAHOVc3j7JT3AHlVL1vDVn3NHOVcp
+    * [oneSymbol2.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/oneSymbol2.txt) **Šifras:** eKvfP9tZFirbL5VxdJnXH1BeKzjTDtZFXLlVFzjT258BEvfP9TWZcfiP5pZJ39B5
     
 2. Du failai sudaryti iš daugiau nei 1000 atsitiktinai sugeneruotų simbolių:
-    * [1001Symbols1.txt]() **Šifras:** JhpWP7JmVh1aNRzPRrNHK7Nt1PHmTNPbHUfPJjfJJtUHDUJJbhJJDtU1r87X88JL
-    * [1001Symbols2.txt]() **Šifras:** QKYclkV1CQ2IBjz7NDXW3yIkhxWGEWy784v8b4W52GU8fZp2HeD1Ho8SZH8AR5o1
+    * [1001Symbols1.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols1.txt) **Šifras:** JhpWP7JmVh1aNRzPRrNHK7Nt1PHmTNPbHUfPJjfJJtUHDUJJbhJJDtU1r87X88JL
+    * [1001Symbols2.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols2.txt) **Šifras:** QKYclkV1CQ2IBjz7NDXW3yIkhxWGEWy784v8b4W52GU8fZp2HeD1Ho8SZH8AR5o1
     
 3. Du failai sudaryti iš daugiau nei 1000 simbolių, bet skiriasi vienu nuo kito tik vienu simboliu:
-    * [1001Symbols3.txt]() **Šifras:** mTBTVHfnR7FLhBbXvJFfdZJhFPNJIT5d5lT7acDBHxNBXG7NlJ5AT5Y75UI9ZLDL
-    * [1001Symbols4.txt]() **Šifras:** nTiPHTj1Pa8zE6cOkQZ1PRWjP8VALHmbyuI4GJrVTQyX4NNQIEcrFn3TQuKK2ab1
+    * [1001Symbols3.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols3.txt) **Šifras:** mTBTVHfnR7FLhBbXvJFfdZJhFPNJIT5d5lT7acDBHxNBXG7NlJ5AT5Y75UI9ZLDL
+    * [1001Symbols4.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols4.txt) **Šifras:** nTiPHTj1Pa8zE6cOkQZ1PRWjP8VALHmbyuI4GJrVTQyX4NNQIEcrFn3TQuKK2ab1
     
 4. Tuščias failas:
-    * [emptyFile.txt]() **Šifras:** rOeM9mUbRuncOyKnYuDpNVHjYSRZCodiDQkhBQcRdQipYoPdCCN3e0WZOcHCZOWK
+    * [emptyFile.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/emptyFile.txt) **Šifras:** rOeM9mUbRuncOyKnYuDpNVHjYSRZCodiDQkhBQcRdQipYoPdCCN3e0WZOcHCZOWK
     
 5. Efektyvumas:
-    * Hash'uojama kiekviena eilutė iš [konstitucija.txt]() šią funkciją ir SHA-256
+    * Hash'uojama kiekviena eilutė iš [konstitucija.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/konstitucija.txt) šią funkciją ir SHA-256
     * Abi funkcijos turi tas pačias sąlygas
     * Matuojamas laikas:
         * SHA-256 - 0.0009968s
@@ -86,13 +86,13 @@ END FUNCTION
         
 6. 100 000 atsitiktinių simbolių eilučių porų: 
     * 25 000 porų, kurių ilgis - 10 simbolių:
-        * [check25k10Symbols.txt]() - kolizijų skaičius: 0
+        * [check25k10Symbols.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/check25k10Symbols.txt) - kolizijų skaičius: 0
     * 25 000 porų, kurių ilgis - 100 simbolių:
-        * [check25k100Symbols.txt]() - kolizijų skaičius: 0
+        * [check25k100Symbols.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/check25k100Symbols.txt) - kolizijų skaičius: 0
     * 25 000 porų, kurių ilgis - 500 simbolių:
-        * [check25k500Symbols.txt]() - kolizijų skaičius: 0
+        * [check25k500Symbols.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/check25k500Symbols.txt) - kolizijų skaičius: 0
     * 25 000 porų, kurių ilgis - 1000 simbolių:
-        * [check25k1000Symbols.txt]() - kolizijų skaičius: 0
+        * [check25k1000Symbols.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/check25k1000Symbols.txt) - kolizijų skaičius: 0
         
 7. 100 000 atsitiktinių simbolių eilučių porų, 32 simbolių eilučių ilgiu, juos skiria tik vienas simbolis. Įvertinamas gautų hash'ų procentinis "skirtingumas" bitų
    lygmenyje:
