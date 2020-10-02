@@ -185,7 +185,7 @@ void Test::checkInBits() {
 
     readAndHashToVectors("porosStringu.txt", text1, text2, 32);
 
-    vector<double> skirtumai;
+    vector<double> skirtumai, skirtumai2;
 
     for(int s = 0; s < 100000; s++) {
         bitset<512> b1;
@@ -210,16 +210,23 @@ void Test::checkInBits() {
             }
         }
 
-        double sutapimai = 0;
+        double sutapimai = 0, sutapimai2 = 0;
 
         for(int j = 0; j < 512; j++) if(b1.test(j) == b2.test(j)) sutapimai++;
+        for(int j = 0; j < 64; j++) if(text1.at(s).at(j) == text2.at(s).at(j)) sutapimai2++;
 
         skirtumai.push_back(sutapimai / 512 * 100);
-    }
+        skirtumai2.push_back(sutapimai2 / 64 * 100);
 
+    }
+    cout << "Bitu lygmenyje:" << endl;
     cout << "Min skirtumo reiksme = " << *min_element(skirtumai.begin(), skirtumai.end()) << "%" << endl;
     cout << "Max skirtumo reiksme = " << *max_element(skirtumai.begin(), skirtumai.end()) << "%" << endl;
     cout << "Vidurkines skirtumo reiksme = " << accumulate( skirtumai.begin(), skirtumai.end(), 0.0) / skirtumai.size() << "%" << endl;
+    cout << "Hash'o lygmenyje:" << endl;
+    cout << "Min skirtumo reiksme = " << *min_element(skirtumai2.begin(), skirtumai2.end()) << "%" << endl;
+    cout << "Max skirtumo reiksme = " << *max_element(skirtumai2.begin(), skirtumai2.end()) << "%" << endl;
+    cout << "Vidurkines skirtumo reiksme = " << accumulate( skirtumai2.begin(), skirtumai2.end(), 0.0) / skirtumai2.size() << "%" << endl;
 }
 
 void test()

@@ -96,9 +96,14 @@ END FUNCTION
         
 7. [100 000 atsitiktinių simbolių eilučių porų](https://github.com/pepprer/Hash-generatorius/blob/master/documents/porosStringu.txt), 32 simbolių eilučių ilgiu, juos skiria tik vienas simbolis. Įvertinamas gautų hash'ų procentinis "skirtingumas" bitų
    lygmenyje:
-    * Minimali skirtingumo reikšmė: **50.3906%**
-    * Maksimali skirtingumo reikšmė: **76.3672%**
-    * Vidurinė skirtingumo reikšmė: **59.9649%**
+    * Bitų lygmenyje:
+        * Minimali skirtingumo reikšmė: **50.3906%**
+        * Maksimali skirtingumo reikšmė: **76.3672%**
+        * Vidurinė skirtingumo reikšmė: **59.9649%**
+    * Hash'o lygmenyje:
+        * Minimali skirtingumo reikšmė: **0%**
+        * Maksimali skirtingumo reikšmė: **39.0625%**
+        * Vidurinė skirtingumo reikšmė: **2.88261%**
 
 ### Norint paleisti kažkokį testą iš pateiktų aukščiau atidarykite failą **main.cpp** ir į funkciją **main** parašykite:
 1. :heavy_check_mark: **Test().filesWithOneSymbol();**
