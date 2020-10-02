@@ -94,7 +94,7 @@ END FUNCTION
     * 25 000 porų, kurių ilgis - **1000 simbolių:**
         * [check25k1000Symbols.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/check25k1000Symbols.txt) - **Kolizijų skaičius: 0**
         
-7. 100 000 atsitiktinių simbolių eilučių porų, 32 simbolių eilučių ilgiu, juos skiria tik vienas simbolis. Įvertinamas gautų hash'ų procentinis "skirtingumas" bitų
+7. [100 000 atsitiktinių simbolių eilučių porų](https://github.com/pepprer/Hash-generatorius/blob/master/documents/porosStringu.txt), 32 simbolių eilučių ilgiu, juos skiria tik vienas simbolis. Įvertinamas gautų hash'ų procentinis "skirtingumas" bitų
    lygmenyje:
     * Minimali skirtingumo reikšmė: **50.3906%**
     * Maksimali skirtingumo reikšmė: **76.3672%**
