@@ -64,7 +64,7 @@ Hash::Hash(string str) {
 
 void Hash::countSize() {
     for (char s: text) {
-        size = size += (int) s;
+        size += (int) s;
     }
     size += text.size();
 }
@@ -104,10 +104,10 @@ void Hash::cryptString() {
         }
     }
 
-    std::stringstream ss;
+    stringstream ss;
     int value = 0;
     for(char s : hashValue) {
-        ss << std::hex << (int)s;
+        ss << hex << (int)s;
         value += (int)s;
     }
 

@@ -58,6 +58,24 @@ FUNCTION CRYPTSTRING(string32, size) <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ENDIF <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;END FOREACH <br/>
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ss; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value = 0; <br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FOR EACH s in hashValue DO<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ss << hex << (int) s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value += (int)s;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;END FOREACH <br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashValue = ss.str(); <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string64; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;which = value % 2; <br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FOR i = 0; i < 64; i++ DO <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string64 += hashValue.at(i * 2 + which); <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;END FOR<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashValue = string64;
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RETURN hashValue; <br/>
 END FUNCTION
 ### Eksperimentinė analizė:
