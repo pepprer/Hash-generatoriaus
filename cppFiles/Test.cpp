@@ -212,8 +212,8 @@ void Test::checkInBits() {
 
         double sutapimai = 0, sutapimai2 = 0;
 
-        for(int j = 0; j < 512; j++) if(b1.test(j) == b2.test(j)) sutapimai++;
-        for(int j = 0; j < 64; j++) if(text1.at(s).at(j) == text2.at(s).at(j)) sutapimai2++;
+        for(int j = 0; j < 512; j++) if(b1.test(j) != b2.test(j)) sutapimai++;
+        for(int j = 0; j < 64; j++) if(text1.at(s).at(j) != text2.at(s).at(j)) sutapimai2++;
 
         skirtumai.push_back(sutapimai / 512 * 100);
         skirtumai2.push_back(sutapimai2 / 64 * 100);

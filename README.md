@@ -63,26 +63,26 @@ END FUNCTION
 ### Eksperimentinė analizė:
 
 1. Du failai sudaryti tik iš vieno, tačiau skirtingo, simbolio:
-    * [oneSymbol1.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/oneSymbol1.txt) **Hash'as:** QHZrPen1JbtKTi3Ldv9OX5NfxlDS7PhzFB7hAHOVc3j7JT3AHlVL1vDVn3NHOVcp
-    * [oneSymbol2.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/oneSymbol2.txt) **Hash'as:** eKvfP9tZFirbL5VxdJnXH1BeKzjTDtZFXLlVFzjT258BEvfP9TWZcfiP5pZJ39B5
+    * [oneSymbol1.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/oneSymbol1.txt) **Hash'as:** 18a205e1a24b493c469f85e68c43708a627818f633a7a4318c6c1646e3e8f630
+    * [oneSymbol2.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/oneSymbol2.txt) **Hash'as:** 6476537546764357646543464765475454654765333447653555666537543343
     
 2. Du failai sudaryti iš daugiau nei 1000 atsitiktinai sugeneruotų simbolių:
-    * [1001Symbols1.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols1.txt) **Hash'as:** JhpWP7JmVh1aNRzPRrNHK7Nt1PHmTNPbHUfPJjfJJtUHDUJJbhJJDtU1r87X88JL
-    * [1001Symbols2.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols2.txt) **Hash'as:** QKYclkV1CQ2IBjz7NDXW3yIkhxWGEWy784v8b4W52GU8fZp2HeD1Ho8SZH8AR5o1
+    * [1001Symbols1.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols1.txt) **Hash'as:** a80707ad6811e2a022e8b7e4108d4e028560aa6aa45845aa28aa4451287888ac
+    * [1001Symbols2.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols2.txt) **Hash'as:** 1b93cb6131292aa7e487399b887757978468247527586a0285418f83a88125f1
     
 3. Du failai sudaryti iš daugiau nei 1000 simbolių, bet skiriasi vienu nuo kito tik vienu simboliu:
-    * [1001Symbols3.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols3.txt) **Hash'as:** mTBTVHfnR7FLhBbXvJFfdZJhFPNJIT5d5lT7acDBHxNBXG7NlJ5AT5Y75UI9ZLDL
-    * [1001Symbols4.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols4.txt) **Hash'as:** nTiPHTj1Pa8zE6cOkQZ1PRWjP8VALHmbyuI4GJrVTQyX4NNQIEcrFn3TQuKK2ab1
+    * [1001Symbols3.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols3.txt) **Hash'as:** d424686e276c82286a664aa860ea94545c47134288e2877eca5145975599ac4c
+    * [1001Symbols4.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/1001Symbols4.txt) **Hash'as:** e49084a1018a563fb1a1027a0861c8d295947a2641984ee195326e3415bb2121
 
 4. Tuščias failas:
-    * [emptyFile.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/emptyFile.txt) **Hash'as:** rOeM9mUbRuncOyKnYuDpNVHjYSRZCodiDQkhBQcRdQipYoPdCCN3e0WZOcHCZOWK
+    * [emptyFile.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/emptyFile.txt) **Hash'as:** 2f5d9d5225e3f9be9540e68a932a3f4941b8213241909f0433e3507af383af7b
     
 5. Efektyvumas:
     * Hash'uojama kiekviena eilutė iš [konstitucija.txt](https://github.com/pepprer/Hash-generatorius/blob/master/documents/konstitucija.txt) šią funkciją ir SHA-256
     * Abi funkcijos turi tas pačias sąlygas
     * Matuojamas laikas:
-        * SHA-256 - **0.0009968s**
-        * Šitą funkciją - **0.0019949s**
+        * SHA-256 - **0.0020221s**
+        * Šitą funkciją - **0.0049952s**
         
 6. 100 000 atsitiktinių simbolių eilučių porų: 
     * 25 000 porų, kurių ilgis - **10 simbolių:**
@@ -97,13 +97,13 @@ END FUNCTION
 7. [100 000 atsitiktinių simbolių eilučių porų](https://github.com/pepprer/Hash-generatorius/blob/master/documents/porosStringu.txt), 32 simbolių eilučių ilgiu, juos skiria tik vienas simbolis. Įvertinamas gautų hash'ų procentinis "skirtingumas" bitų
    lygmenyje:
     * Bitų lygmenyje:
-        * Minimali skirtingumo reikšmė: **50.3906%**
-        * Maksimali skirtingumo reikšmė: **76.3672%**
-        * Vidurinė skirtingumo reikšmė: **59.9649%**
+        * Minimali skirtingumo reikšmė: **7.8125%**
+        * Maksimali skirtingumo reikšmė: **41.4062%**
+        * Vidurinė skirtingumo reikšmė: **25.2986%**
     * Hash'o lygmenyje:
-        * Minimali skirtingumo reikšmė: **0%**
-        * Maksimali skirtingumo reikšmė: **39.0625%**
-        * Vidurinė skirtingumo reikšmė: **2.88261%**
+        * Minimali skirtingumo reikšmė: **42.1875%**
+        * Maksimali skirtingumo reikšmė: **100%**
+        * Vidurinė skirtingumo reikšmė: **88.1281%**
 
 ### Norint paleisti kažkokį testą iš pateiktų aukščiau atidarykite failą **main.cpp** ir į funkciją **main** parašykite:
 1. :heavy_check_mark: **Test().filesWithOneSymbol();**

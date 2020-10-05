@@ -70,7 +70,7 @@ void Hash::countSize() {
 }
 
 void Hash::cryptString() {
-    static const char alphabet[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    static const char alphabet[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"; //0123456789abcdef
     unsigned long long int crypt = 43;
     if (size == 0) size = 1;
     for (char c : string32) {
@@ -103,6 +103,23 @@ void Hash::cryptString() {
             hashValue += alphabet[crypt % 62];
         }
     }
+
+    std::stringstream ss;
+    int value = 0;
+    for(char s : hashValue) {
+        ss << std::hex << (int)s;
+        value += (int)s;
+    }
+
+    hashValue = ss.str();
+
+    string string64;
+    int which = value % 2;
+    for(int i = 0; i < 64; i++) {
+        string64 += hashValue.at(i * 2 + which);
+    }
+
+    hashValue = string64;
 }
 
 string Hash::getHashValue() {
